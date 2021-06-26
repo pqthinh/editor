@@ -4,6 +4,34 @@
 </div>
 <script src="./build/ckeditor.js"></script>
 <script>
+  function Upload(props) {
+    this.loader = props.loader;
+  }
+  Upload.prototype = {
+    upload: function () {
+      if (this.loader?.file)
+        return this.loader?.file.then((file) => {
+          return this._initListeners(file, this.onUpload);
+        });
+    },
+    abort: () => {},
+    _initRequest: () => {},
+    _initListeners: async (file, onUpload) => {
+      try {
+        await console.log(file);
+      } catch (e) {
+        console.log(e);
+      }
+
+      return new Promise((resolve) => {
+        resolve({
+          default: URL.createObjectURL(file),
+        });
+      });
+    },
+    _sendRequest: () => {},
+  };
+
   BaseEditor.create(document.querySelector("#editor"))
     .then((editor) => {
       // The toolbar needs to be explicitly appended.
@@ -11,15 +39,15 @@
         .querySelector("#toolbar-container")
         .appendChild(editor.ui.view.toolbar.element);
 
-      /*editor.ui
+      editor.ui
         .getEditableElement()
         .parentElement.insertBefore(
           editor.ui.view.toolbar.element,
           editor.ui.getEditableElement()
         );
       editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
-        return new Upload({ loader, onUpload });
-      };*/
+        return new Upload({ loader });
+      };
 
       window.editor = editor;
     })
