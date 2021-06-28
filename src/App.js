@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import EditorPage from "./page/EditorPage";
 import BaseColorPicker from "./page/ColorPicker";
+import HightChart from "./page/StatisticPage";
 function App() {
   return (
     <Router>
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/color-picker">
           <BaseColorPicker />
+        </Route>
+        <Route path="/statistic">
+          <HightChart />
         </Route>
       </div>
     </Router>
