@@ -1,0 +1,10 @@
+.container--color-picker {
+  margin: auto;
+  display: flex;
+  height: 100vh;
+}
+
+.sketch-picker {
+  min-width: 200px;
+  margin: auto;
+}
