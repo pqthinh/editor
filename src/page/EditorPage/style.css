@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container-editor {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.block--title {
+  margin: 20px 0;
+}
+
+.editor {
+  border: 1px solid #f0f0f0;
+  display: block;
+}
+
+.editor .ck-content {
+  min-height: 300px;
+}
