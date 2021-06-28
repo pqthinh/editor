@@ -40,7 +40,7 @@ import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
 import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize";
 import Code from "@ckeditor/ckeditor5-basic-styles/src/code.js";
 import CodeBlock from "@ckeditor/ckeditor5-code-block/src/codeblock";
-// import VideoUploader from '@ckeditor/ckeditor5-ui/src/button/button';
+import VideoUploader from "@ckeditor/ckeditor5-ui/src/button/button";
 
 const colors = [
   {
@@ -144,6 +144,7 @@ BaseEditor.builtinPlugins = [
   TableToolbar,
   Code,
   CodeBlock,
+  VideoUploader,
 ];
 
 // Editor configuration.
