@@ -12,8 +12,8 @@ const BaseColorPicker = () => {
   return (
     <div
       className="container--color-picker"
-      data-color={color.hex}
-      style={{ background: color.hex }}
+      data-color={color?.hex || "#fff"}
+      style={{ background: color?.hex || "#fff" }}
     >
       <SketchPicker color={color} onChangeComplete={handleChange} />
     </div>
